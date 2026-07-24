@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditions Générales d'Utilisation — Couddy</title>
+<meta name="description" content="Conditions Générales d'Utilisation du site Couddy Live Music.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          plum: { DEFAULT:'#121110', 2:'#1b1917', 3:'#242220', 4:'#2e2b28' },
+          gold: { DEFAULT:'#c9a24b', light:'#e8c876', dark:'#9c7a30' },
+          cream: '#f3ead9',
+          muted: '#a89a8e'
+        },
+        fontFamily: {
+          serif: ['Cinzel','serif'],
+          sans: ['Josefin Sans','sans-serif'],
+          mono: ['JetBrains Mono','monospace']
+        },
+        maxWidth: { '8xl':'90rem' }
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-plum text-cream font-sans antialiased">
+
+<a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-gold focus:text-plum focus:px-4 focus:py-2 focus:rounded">
+  Aller au contenu principal
+</a>
+
+<header class="fixed top-0 inset-x-0 z-50 bg-plum/90 backdrop-blur-md border-b border-cream/5">
+  <nav class="max-w-8xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Navigation principale">
+    <a href="index.html" class="flex items-center gap-2.5 font-serif font-bold text-2xl tracking-tight text-cream">
+      <img src="images/logo-mark.png" alt="" aria-hidden="true" class="h-9 w-9 sm:h-10 sm:w-10 object-contain">
+      <span>Cou<span class="text-gold">ddy</span></span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-1 font-mono text-xs uppercase tracking-widest">
+      <li><a href="index.html#duo" class="block px-4 py-2 text-muted hover:text-gold transition-colors">Qui sommes-nous</a></li>
+      <li><a href="index.html#prestations" class="block px-4 py-2 text-muted hover:text-gold transition-colors">Prestations</a></li>
+      <li><a href="index.html#repertoire" class="block px-4 py-2 text-muted hover:text-gold transition-colors">Répertoire</a></li>
+      <li><a href="index.html#galerie" class="block px-4 py-2 text-muted hover:text-gold transition-colors">Galerie</a></li>
+      <li><a href="index.html#contact" class="ml-2 px-5 py-2.5 bg-gold text-plum font-sans font-semibold normal-case tracking-normal rounded-sm hover:bg-gold-light transition-colors">Demander un devis</a></li>
+    </ul>
+
+    <button id="menuToggle" class="lg:hidden inline-flex items-center justify-center w-11 h-11 text-cream" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+      <svg id="iconMenu" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg id="iconClose" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" class="hidden"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <div id="mobileMenu" class="mobile-menu lg:hidden border-t border-cream/5 bg-plum">
+    <ul class="px-5 py-4 flex flex-col gap-1 font-mono text-sm uppercase tracking-widest">
+      <li><a href="index.html#duo" class="block px-2 py-3 text-muted hover:text-gold">Qui sommes-nous</a></li>
+      <li><a href="index.html#prestations" class="block px-2 py-3 text-muted hover:text-gold">Prestations</a></li>
+      <li><a href="index.html#repertoire" class="block px-2 py-3 text-muted hover:text-gold">Répertoire</a></li>
+      <li><a href="index.html#galerie" class="block px-2 py-3 text-muted hover:text-gold">Galerie</a></li>
+      <li><a href="index.html#contact" class="block px-2 py-3 text-gold">Demander un devis</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="contenu" class="pt-40 pb-24 sm:pb-32">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <p class="reveal font-mono text-gold text-xs uppercase tracking-[0.25em] mb-3">Utilisation du site</p>
+    <h1 class="reveal font-serif font-semibold text-cream text-[clamp(2rem,4.5vw,3.2rem)] mb-12">Conditions Générales d'Utilisation</h1>
+
+    <div class="reveal space-y-10 text-muted text-base leading-[1.8]">
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 1 — Objet</h2>
+        <p class="mb-3">
+          Les présentes Conditions Générales d'Utilisation ont pour objet de définir les modalités d'accès et
+          d'utilisation du site internet de <strong class="text-cream">Couddy Live Music</strong>.
+        </p>
+        <p>En naviguant sur ce site, l'utilisateur accepte pleinement les présentes CGU.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 2 — Accès au site</h2>
+        <p class="mb-3">Le site est accessible gratuitement à tout utilisateur disposant d'un accès à Internet.</p>
+        <p class="mb-3">Les frais liés à l'accès au réseau Internet restent à la charge de l'utilisateur.</p>
+        <p>Couddy Live Music s'efforce d'assurer un accès continu au site mais ne peut garantir une disponibilité permanente.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 3 — Contenu du site</h2>
+        <p class="mb-3">Les informations diffusées sur le site sont fournies à titre informatif.</p>
+        <p>
+          Couddy Live Music s'efforce de maintenir les informations à jour mais ne saurait être tenu responsable
+          d'éventuelles erreurs, omissions ou indisponibilités.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 4 — Propriété intellectuelle</h2>
+        <p class="mb-3">
+          Tous les contenus présents sur le site (textes, photographies, vidéos, logos, graphismes, éléments
+          musicaux et visuels) sont protégés par les lois relatives à la propriété intellectuelle.
+        </p>
+        <p>Toute reproduction ou utilisation, totale ou partielle, sans autorisation préalable est interdite.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 5 — Utilisation du site</h2>
+        <p class="mb-3">L'utilisateur s'engage à utiliser le site conformément aux lois et réglementations en vigueur.</p>
+        <p>Il est notamment interdit de porter atteinte au bon fonctionnement du site ou d'utiliser son contenu à des fins illicites.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 6 — Liens externes</h2>
+        <p class="mb-3">
+          Le site peut contenir des liens vers des sites tiers (réseaux sociaux, plateformes de réservation,
+          vidéos, etc.).
+        </p>
+        <p>Couddy Live Music ne peut être tenu responsable du contenu ou du fonctionnement de ces sites externes.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 7 — Protection des données personnelles</h2>
+        <p>
+          Les données éventuellement collectées via le formulaire de contact sont traitées conformément à la
+          <a href="politique-confidentialite.html" class="text-gold hover:text-gold-light">Politique de confidentialité</a> du site.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 8 — Responsabilité</h2>
+        <p>
+          Couddy Live Music ne pourra être tenu responsable des dommages directs ou indirects résultant de
+          l'utilisation du site, notamment en cas d'interruption temporaire, de problème technique ou
+          d'indisponibilité.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 9 — Modification des CGU</h2>
+        <p class="mb-3">
+          Couddy Live Music se réserve le droit de modifier les présentes Conditions Générales d'Utilisation à
+          tout moment.
+        </p>
+        <p>Les nouvelles dispositions s'appliquent dès leur publication sur le site.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif font-semibold text-cream text-xl mb-4">Article 10 — Droit applicable</h2>
+        <p class="mb-3">Les présentes CGU sont soumises au droit français.</p>
+        <p>Tout litige relatif à leur interprétation ou à leur exécution relève de la compétence des juridictions françaises.</p>
+      </section>
+
+    </div>
+
+    <a href="index.html" class="reveal inline-flex items-center gap-2 mt-14 font-mono text-xs uppercase tracking-widest text-gold hover:text-gold-light transition-colors">
+      ← Retour au site
+    </a>
+  </div>
+</main>
+
+<footer class="border-t border-cream/8 py-10 bg-plum-2">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 flex flex-wrap gap-4 items-center justify-between text-muted text-sm">
+    <p>© 2026 Couddy</p>
+    <nav class="flex gap-6" aria-label="Réseaux sociaux">
+      <a href="https://linkaband.com/couddy" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Linkaband</a>
+      <a href="https://www.instagram.com/_couddy_/" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Instagram</a>
+      <a href="https://www.youtube.com/@COUDDY_MUSIC" target="_blank" rel="noopener" class="hover:text-gold transition-colors">YouTube</a>
+    </nav>
+  </div>
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 mt-6 pt-6 border-t border-cream/8 flex flex-wrap gap-x-6 gap-y-2 text-muted text-xs font-mono uppercase tracking-widest">
+    <a href="mentions-legales.html" class="hover:text-gold transition-colors">Mentions légales</a>
+    <a href="politique-confidentialite.html" class="hover:text-gold transition-colors">Politique de confidentialité</a>
+    <a href="cgu.html" class="text-gold">CGU</a>
+  </div>
+</footer>
+
+<script src="legal.js"></script>
+</body>
+</html>

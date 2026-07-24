@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Couddy — Duo guitare & voix pour vos événements</title>
+<meta name="description" content="Couddy, duo guitare & voix. Mariages, cocktails, soirées d'entreprise, restaurants, bars et Club Med. Plus de 200 reprises au répertoire, concept Jukebox Live.">
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          plum: { DEFAULT:'#121110', 2:'#1b1917', 3:'#242220', 4:'#2e2b28' },
+          gold: { DEFAULT:'#c9a24b', light:'#e8c876', dark:'#9c7a30' },
+          cream: '#f3ead9',
+          muted: '#a89a8e'
+        },
+        fontFamily: {
+          serif: ['Cinzel','serif'],
+          sans: ['Josefin Sans','sans-serif'],
+          mono: ['JetBrains Mono','monospace']
+        },
+        maxWidth: { '8xl':'90rem' }
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-plum text-cream font-sans antialiased">
+
+<!-- SKIP LINK -->
+<a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-gold focus:text-plum focus:px-4 focus:py-2 focus:rounded">
+  Aller au contenu principal
+</a>
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 bg-plum/90 backdrop-blur-md border-b border-cream/5">
+  <nav class="max-w-8xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Navigation principale">
+    <a href="#" class="flex items-center gap-2.5 font-serif font-bold text-2xl tracking-tight text-cream">
+      <img src="images/logo-mark.png" alt="" aria-hidden="true" class="h-9 w-9 sm:h-10 sm:w-10 object-contain">
+      <span>Cou<span class="text-gold">ddy</span></span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-1 font-mono text-xs uppercase tracking-widest">
+      <li><a href="#duo" class="block px-4 py-2 text-muted hover:text-gold transition-colors">Qui sommes-nous</a></li>
+      <li><a href="#prestations" class="block px-4 py-2 text-muted hover:text-gold transition-colors">Prestations</a></li>
+      <li><a href="#repertoire" class="block px-4 py-2 text-muted hover:text-gold transition-colors">Répertoire</a></li>
+      <li><a href="#galerie" class="block px-4 py-2 text-muted hover:text-gold transition-colors">Galerie</a></li>
+      <li><a href="#contact" class="ml-2 px-5 py-2.5 bg-gold text-plum font-sans font-semibold normal-case tracking-normal rounded-sm hover:bg-gold-light transition-colors">Demander un devis</a></li>
+    </ul>
+
+    <button id="menuToggle" class="lg:hidden inline-flex items-center justify-center w-11 h-11 text-cream" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+      <svg id="iconMenu" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg id="iconClose" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" class="hidden"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <div id="mobileMenu" class="mobile-menu lg:hidden border-t border-cream/5 bg-plum">
+    <ul class="px-5 py-4 flex flex-col gap-1 font-mono text-sm uppercase tracking-widest">
+      <li><a href="#duo" class="block px-2 py-3 text-muted hover:text-gold">Qui sommes-nous</a></li>
+      <li><a href="#prestations" class="block px-2 py-3 text-muted hover:text-gold">Prestations</a></li>
+      <li><a href="#repertoire" class="block px-2 py-3 text-muted hover:text-gold">Répertoire</a></li>
+      <li><a href="#galerie" class="block px-2 py-3 text-muted hover:text-gold">Galerie</a></li>
+      <li><a href="#contact" class="block px-2 py-3 text-gold">Demander un devis</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- HERO — affiche de concert -->
+<section class="relative h-[100dvh] min-h-[560px] flex flex-col overflow-hidden">
+  <!-- photo de fond, traitement duotone noir/or -->
+  <div class="absolute inset-0">
+    <img src="images/couddy-duo-neon-mur.jpg" alt="Cyril et Laetitia, duo Couddy, sous l'enseigne néon Couddy devant un mur de brique"
+         class="w-full h-full object-cover object-[50%_22%]" style="filter:grayscale(1) contrast(1.08) brightness(0.72);">
+    <div class="absolute inset-0" style="background:linear-gradient(125deg, #050505 0%, #c9a24b 140%); mix-blend-mode:color; opacity:0.85;"></div>
+    <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(5,5,5,0.25) 0%, rgba(5,5,5,0.2) 30%, rgba(5,5,5,0.55) 70%, #121110 97%);"></div>
+  </div>
+
+  <!-- vinyle en médaillon flottant — cliquable : tirage du soir -->
+  <button type="button" id="vinylTrigger"
+    class="reveal absolute top-24 right-5 sm:right-8 md:right-14 z-10 appearance-none bg-transparent border-0 p-0 cursor-pointer"
+    style="width:min(150px,30vw);"
+    aria-haspopup="dialog" aria-controls="vinylOverlay" aria-expanded="false"
+    aria-label="Tirage du soir : découvrir un titre au hasard dans notre répertoire">
+    <div class="vinyl" style="width:100%;">
+      <span class="vinyl-label" aria-hidden="true">COUDDY</span>
+    </div>
+  </button>
+
+  <!-- contenu, ancré en bas à gauche — symétrique au vinyle (haut à droite) -->
+  <div class="relative z-10 mt-auto w-full">
+    <div class="pl-5 sm:pl-8 md:pl-14 pr-5 pb-10 sm:pb-12">
+      <p class="reveal font-mono text-gold text-xs sm:text-sm uppercase tracking-[0.3em] mb-3">Duo live — guitare & voix</p>
+      <h1 class="reveal font-serif font-bold uppercase text-cream leading-[0.82] tracking-tight text-[clamp(3.5rem,14vw,10rem)]">
+        Couddy
+      </h1>
+      <p class="reveal font-serif font-normal text-gold-light text-xl sm:text-2xl md:text-3xl tracking-[0.08em] mt-2">
+        joue votre événement
+      </p>
+    </div>
+
+    <!-- bandeau défilant -->
+    <div class="reveal border-t border-gold/20 bg-plum/85 backdrop-blur-sm py-3 overflow-hidden">
+      <div class="marquee-inner flex w-max">
+        <div class="flex items-center gap-6 shrink-0 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-gold-light pr-6">
+          <span>Mariages</span><span class="text-gold/50">•</span>
+          <span>Cocktails</span><span class="text-gold/50">•</span>
+          <span>Restaurants</span><span class="text-gold/50">•</span>
+          <span>Bars</span><span class="text-gold/50">•</span>
+          <span>Anniversaires</span><span class="text-gold/50">•</span>
+          <span>Entreprises</span><span class="text-gold/50">•</span>
+          <span>Club Med Live</span><span class="text-gold/50">•</span>
+        </div>
+        <div class="flex items-center gap-6 shrink-0 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-gold-light pr-6" aria-hidden="true">
+          <span>Mariages</span><span class="text-gold/50">•</span>
+          <span>Cocktails</span><span class="text-gold/50">•</span>
+          <span>Restaurants</span><span class="text-gold/50">•</span>
+          <span>Bars</span><span class="text-gold/50">•</span>
+          <span>Anniversaires</span><span class="text-gold/50">•</span>
+          <span>Entreprises</span><span class="text-gold/50">•</span>
+          <span>Club Med Live</span><span class="text-gold/50">•</span>
+        </div>
+        <div class="flex items-center gap-6 shrink-0 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-gold-light pr-6" aria-hidden="true">
+          <span>Mariages</span><span class="text-gold/50">•</span>
+          <span>Cocktails</span><span class="text-gold/50">•</span>
+          <span>Restaurants</span><span class="text-gold/50">•</span>
+          <span>Bars</span><span class="text-gold/50">•</span>
+          <span>Anniversaires</span><span class="text-gold/50">•</span>
+          <span>Entreprises</span><span class="text-gold/50">•</span>
+          <span>Club Med Live</span><span class="text-gold/50">•</span>
+        </div>
+        <div class="flex items-center gap-6 shrink-0 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-gold-light pr-6" aria-hidden="true">
+          <span>Mariages</span><span class="text-gold/50">•</span>
+          <span>Cocktails</span><span class="text-gold/50">•</span>
+          <span>Restaurants</span><span class="text-gold/50">•</span>
+          <span>Bars</span><span class="text-gold/50">•</span>
+          <span>Anniversaires</span><span class="text-gold/50">•</span>
+          <span>Entreprises</span><span class="text-gold/50">•</span>
+          <span>Club Med Live</span><span class="text-gold/50">•</span>
+        </div>
+        <div class="flex items-center gap-6 shrink-0 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-gold-light pr-6" aria-hidden="true">
+          <span>Mariages</span><span class="text-gold/50">•</span>
+          <span>Cocktails</span><span class="text-gold/50">•</span>
+          <span>Restaurants</span><span class="text-gold/50">•</span>
+          <span>Bars</span><span class="text-gold/50">•</span>
+          <span>Anniversaires</span><span class="text-gold/50">•</span>
+          <span>Entreprises</span><span class="text-gold/50">•</span>
+          <span>Club Med Live</span><span class="text-gold/50">•</span>
+        </div>
+        <div class="flex items-center gap-6 shrink-0 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-gold-light pr-6" aria-hidden="true">
+          <span>Mariages</span><span class="text-gold/50">•</span>
+          <span>Cocktails</span><span class="text-gold/50">•</span>
+          <span>Restaurants</span><span class="text-gold/50">•</span>
+          <span>Bars</span><span class="text-gold/50">•</span>
+          <span>Anniversaires</span><span class="text-gold/50">•</span>
+          <span>Entreprises</span><span class="text-gold/50">•</span>
+          <span>Club Med Live</span><span class="text-gold/50">•</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUI SOMMES-NOUS -->
+<section id="duo" class="py-24 sm:py-32">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-6 lg:order-2">
+      <p class="reveal font-mono text-gold text-xs uppercase tracking-[0.25em] mb-3">Le duo</p>
+      <h2 class="reveal font-serif font-semibold text-cream text-[clamp(2rem,4.5vw,3.2rem)] mb-6">Qui sommes-nous ?</h2>
+      <p class="reveal text-muted text-base sm:text-lg leading-[1.8] max-w-xl mb-5">
+        <strong class="text-cream font-semibold">Couddy</strong>, un duo dynamique composé de Cyril à la guitare
+        et de Laetitia au cajon et chant.
+      </p>
+      <p class="reveal text-muted text-base sm:text-lg leading-[1.8] max-w-xl mb-5">
+        Couddy est un groupe polyvalent qui offre une variété de prestations musicales
+        adaptées à tous les types d'événements. Forts de plus de 200 reprises de
+        chansons populaires, ils peuvent créer une ambiance unique pour chaque occasion.
+        Que ce soit pour une soirée d'entreprise, un mariage, un concert dans un bar
+        ou un dîner dans un restaurant, Couddy saura s'adapter à l'atmosphère et au
+        style de votre événement.
+      </p>
+      <p class="reveal text-muted text-base sm:text-lg leading-[1.8] max-w-xl">
+        Mais ce n'est pas tout ! Le groupe Couddy propose également le
+        <strong class="text-gold-light font-medium">Jukebox Live</strong> : à l'aide d'un QR code, vous choisissez,
+        en direct, dans notre répertoire, votre programmation ! Vous pouvez même laisser une dédicace.
+      </p>
+    </div>
+    <div class="lg:col-span-6 lg:order-1">
+      <div class="reveal aspect-[3/4] rounded-sm overflow-hidden border border-cream/10 bg-plum-2">
+        <img src="images/couddy-duo-noir-blanc-studio.jpg" alt="Portrait studio noir et blanc de Cyril et Laetitia, duo Couddy, avec guitare et cajon"
+             class="w-full h-full object-cover" loading="lazy" width="960" height="1440">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESTATIONS -->
+<section id="prestations" class="py-24 sm:py-32 bg-plum-2">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8">
+    <p class="reveal font-mono text-gold text-xs uppercase tracking-[0.25em] mb-3">Ce que nous proposons</p>
+    <h2 class="reveal font-serif font-semibold text-cream text-[clamp(2rem,4.5vw,3.2rem)] mb-6">Nos prestations</h2>
+    <p class="reveal text-muted text-base sm:text-lg leading-[1.8] max-w-2xl mb-8">
+      Avec Laetitia au chant et Cyril à la guitare et au chant, ambiance lounge ou festive :
+      musique d'ambiance chill pour discuter en mangeant, ou concert pour chanter et danser
+      toute la nuit. Plus de 200 reprises au répertoire, adaptable à tous les types d'événements.
+    </p>
+
+    <p class="reveal text-muted text-base sm:text-lg leading-[1.9] max-w-2xl mb-14">
+      Depuis 2022, Couddy a joué <span class="font-serif text-gold text-xl sm:text-2xl">70+</span> dates
+      dans <span class="font-serif text-gold text-xl sm:text-2xl">4</span> pays, pour un répertoire vivant
+      de <span class="font-serif text-gold text-xl sm:text-2xl">226</span> titres — porté par
+      <span class="font-serif text-gold text-xl sm:text-2xl">2</span> voix, un seul duo.
+    </p>
+
+    <div class="reveal border-t border-b border-gold/20 py-8 sm:py-10">
+      <p class="font-serif leading-[1.3] text-[clamp(1.7rem,5vw,3.4rem)]">
+        <button type="button" class="presta-trigger text-cream hover:text-gold transition-colors" data-cat="Mariages" aria-expanded="false" aria-controls="prestaPanel">Mariages</button>
+        <span class="text-gold/40 text-[0.35em] align-middle mx-2 sm:mx-4">•</span>
+        <button type="button" class="presta-trigger text-cream hover:text-gold transition-colors" data-cat="Cocktails" aria-expanded="false" aria-controls="prestaPanel">Cocktails</button>
+        <span class="text-gold/40 text-[0.35em] align-middle mx-2 sm:mx-4">•</span>
+        <button type="button" class="presta-trigger text-cream hover:text-gold transition-colors" data-cat="Restaurants" aria-expanded="false" aria-controls="prestaPanel">Restaurants</button>
+        <span class="text-gold/40 text-[0.35em] align-middle mx-2 sm:mx-4">•</span>
+        <button type="button" class="presta-trigger text-cream hover:text-gold transition-colors" data-cat="Bars" aria-expanded="false" aria-controls="prestaPanel">Bars</button>
+        <span class="text-gold/40 text-[0.35em] align-middle mx-2 sm:mx-4">•</span>
+        <button type="button" class="presta-trigger text-cream hover:text-gold transition-colors" data-cat="Anniversaires" aria-expanded="false" aria-controls="prestaPanel">Anniversaires</button>
+        <span class="text-gold/40 text-[0.35em] align-middle mx-2 sm:mx-4">•</span>
+        <button type="button" class="presta-trigger text-cream hover:text-gold transition-colors" data-cat="Entreprises" aria-expanded="false" aria-controls="prestaPanel">Entreprises</button>
+        <span class="text-gold/40 text-[0.35em] align-middle mx-2 sm:mx-4">•</span>
+        <button type="button" class="presta-trigger text-gold-light hover:text-gold transition-colors" data-cat="Club Med Live" aria-expanded="false" aria-controls="prestaPanel">Club Med Live</button>
+      </p>
+
+      <p class="mt-5">
+        <button type="button" class="presta-trigger font-mono text-xs uppercase tracking-[0.2em] text-muted hover:text-gold transition-colors" data-cat="Autres" aria-expanded="false" aria-controls="prestaPanel">
+          + Autres événements publics
+        </button>
+      </p>
+
+      <div id="prestaPanel" class="hidden mt-8 pt-8 border-t border-cream/10">
+        <div class="flex items-center justify-between gap-4 mb-5">
+          <p id="prestaPanelTitle" class="font-mono text-gold text-xs uppercase tracking-[0.25em]"></p>
+          <button type="button" id="prestaPanelClose" class="font-mono text-muted hover:text-gold text-xs uppercase tracking-widest shrink-0">Fermer ✕</button>
+        </div>
+        <ul id="prestaPanelList" class="grid sm:grid-cols-2 sm:gap-x-10 max-h-[440px] overflow-y-auto pr-1 repertoire-list" role="list"></ul>
+      </div>
+    </div>
+
+    <!-- JUKEBOX LIVE -->
+    <div class="reveal mt-6 sm:mt-8 border border-gold/25 rounded-sm p-8 sm:p-12"
+         style="background:linear-gradient(135deg, #1b1917, #242220);">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8">
+          <p class="font-mono text-gold text-xs uppercase tracking-[0.25em] mb-2">Le concept Couddy</p>
+          <h3 class="font-serif font-semibold text-gold-light text-2xl sm:text-3xl mb-4">Jukebox Live — choisissez la musique en direct !</h3>
+          <p class="text-muted text-base sm:text-lg leading-[1.75] max-w-2xl">
+            Avec notre concept Jukebox Live, vos invités deviennent les programmateurs du concert !
+            Grâce à un QR Code, ils accèdent à notre répertoire de plus de 200 titres, choisissent
+            les morceaux qu'ils souhaitent entendre et peuvent même nous laisser une dédicace.
+            Chaque prestation est unique, interactive et s'adapte aux envies du public pour créer
+            une ambiance conviviale et mémorable. <span class="text-cream font-medium">Vous choisissez, nous jouons !</span>
+          </p>
+        </div>
+        <div class="lg:col-span-4 flex justify-center lg:justify-end">
+          <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-sm flex items-center justify-center bg-cream/95 p-3" aria-hidden="true">
+            <svg viewBox="0 0 100 100" class="w-full h-full text-plum" fill="currentColor">
+              <rect x="6" y="6" width="26" height="26" fill="none" stroke="currentColor" stroke-width="6"/>
+              <rect x="14" y="14" width="10" height="10"/>
+              <rect x="68" y="6" width="26" height="26" fill="none" stroke="currentColor" stroke-width="6"/>
+              <rect x="76" y="14" width="10" height="10"/>
+              <rect x="6" y="68" width="26" height="26" fill="none" stroke="currentColor" stroke-width="6"/>
+              <rect x="14" y="76" width="10" height="10"/>
+              <rect x="42" y="6" width="8" height="8"/><rect x="54" y="6" width="8" height="8"/>
+              <rect x="42" y="18" width="8" height="8"/><rect x="58" y="22" width="8" height="8"/>
+              <rect x="42" y="42" width="8" height="8"/><rect x="54" y="42" width="8" height="8"/>
+              <rect x="68" y="42" width="8" height="8"/><rect x="80" y="42" width="8" height="8"/>
+              <rect x="42" y="54" width="8" height="8"/><rect x="42" y="66" width="8" height="8"/>
+              <rect x="42" y="80" width="8" height="8"/><rect x="54" y="68" width="8" height="8"/>
+              <rect x="66" y="68" width="8" height="8"/><rect x="78" y="78" width="8" height="8"/>
+              <rect x="54" y="86" width="8" height="8"/><rect x="80" y="60" width="8" height="8"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPERTOIRE -->
+<section id="repertoire" class="py-24 sm:py-32">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl mb-10">
+      <p class="reveal font-mono text-gold text-xs uppercase tracking-[0.25em] mb-3">226 titres au répertoire</p>
+      <h2 class="reveal font-serif font-semibold text-cream text-[clamp(2rem,4.5vw,3.2rem)] mb-5">Notre répertoire</h2>
+      <p class="reveal text-muted text-base sm:text-lg leading-[1.8]">
+        Un aperçu de ce que nous jouons en live — cherchez un titre ou un artiste.
+      </p>
+    </div>
+
+    <div class="lg:flex lg:gap-10 lg:items-stretch">
+      <div class="lg:w-7/12">
+        <div class="reveal relative">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <label for="repSearch" class="sr-only">Rechercher un titre ou un artiste dans le répertoire</label>
+          <input type="text" id="repSearch"
+                 class="w-full bg-plum-2 border border-cream/10 focus:border-gold text-cream placeholder-muted rounded-sm pl-12 pr-4 py-4 text-base"
+                 placeholder="Rechercher un titre ou un artiste…" autocomplete="off">
+        </div>
+
+        <div class="flex items-center justify-between mt-3">
+          <span id="repCount" class="font-mono text-gold text-sm" aria-live="polite"></span>
+        </div>
+
+        <div id="repList" class="repertoire-list mt-2 max-h-[600px] overflow-y-auto border-t border-cream/8" role="list"></div>
+      </div>
+
+      <div class="mt-10 lg:mt-0 lg:w-5/12">
+        <div class="reveal aspect-[3/4] lg:aspect-auto lg:h-[700px] rounded-sm overflow-hidden border border-cream/10 bg-plum-2">
+          <img src="images/couddy-duo-mains-guitare.jpg" alt="Mains de Cyril posées sur le manche de la guitare avant un concert"
+               class="w-full h-full object-cover" loading="lazy" width="900" height="1350">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie" class="py-24 sm:py-32 bg-plum-2">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8">
+    <p class="reveal font-mono text-gold text-xs uppercase tracking-[0.25em] mb-3">En images et en son</p>
+    <h2 class="reveal font-serif font-semibold text-cream text-[clamp(2rem,4.5vw,3.2rem)] mb-12">Galerie</h2>
+
+    <div class="grid lg:grid-cols-12 gap-6 mb-6">
+      <div class="lg:col-span-8">
+        <div class="reveal border border-cream/8 bg-plum-2 rounded-sm overflow-hidden">
+          <video controls preload="metadata" class="w-full block max-h-[70vh] bg-black" poster="images/couddy-duo-restaurant-neon.jpg">
+            <source src="videos/promo-couddy.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture vidéo.
+          </video>
+        </div>
+      </div>
+      <div class="lg:col-span-4">
+        <div class="reveal h-full min-h-[220px] border border-cream/8 bg-plum-2 rounded-sm flex flex-col items-center justify-center text-center p-8 gap-4">
+          <svg class="w-10 h-10 text-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.5 31.5 0 000 12a31.5 31.5 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.5 31.5 0 0024 12a31.5 31.5 0 00-.5-5.8zM9.6 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+          </svg>
+          <p class="font-serif font-semibold text-cream text-lg">Chaîne YouTube</p>
+          <a href="https://www.youtube.com/@COUDDY_MUSIC" target="_blank" rel="noopener" class="font-mono text-sm text-gold hover:text-gold-light break-all">@COUDDY_MUSIC →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="reveal aspect-[4/3] rounded-sm overflow-hidden border border-cream/8 bg-plum-2">
+        <img src="images/couddy-duo-restaurant-neon.jpg" alt="Cyril et Laetitia, duo Couddy, en prestation dans un restaurant sous enseigne néon"
+             class="w-full h-full object-cover object-[center_20%]" loading="lazy" width="1024" height="1536">
+      </div>
+      <div class="reveal aspect-[4/3] rounded-sm overflow-hidden border border-cream/8 bg-plum-2">
+        <img src="images/couddy-duo-portrait-serre.jpg" alt="Portrait rapproché de Cyril et Laetitia, duo Couddy"
+             class="w-full h-full object-cover object-top" loading="lazy" width="900" height="1350">
+      </div>
+      <div class="reveal aspect-[4/3] rounded-sm overflow-hidden border border-cream/8 bg-plum-2">
+        <img src="images/couddy-duo-noir-blanc-exterieur.jpg" alt="Cyril et Laetitia, duo Couddy, photo noir et blanc en extérieur avec guitare et cajon"
+             class="w-full h-full object-cover" loading="lazy" width="2000" height="1333">
+      </div>
+      <div class="reveal aspect-[4/3] rounded-sm overflow-hidden border border-cream/8 bg-plum-2">
+        <img src="images/couddy-duo-neon-mur.jpg" alt="Cyril et Laetitia, duo Couddy, sous enseigne néon devant un mur de brique"
+             class="w-full h-full object-cover" loading="lazy" width="1536" height="1024">
+      </div>
+      <div class="reveal aspect-[4/3] rounded-sm overflow-hidden border border-cream/8 bg-plum-2">
+        <img src="images/couddy-duo-dos-a-dos.jpg" alt="Cyril et Laetitia, duo Couddy, dos à dos avec la guitare, en extérieur"
+             class="w-full h-full object-cover" loading="lazy" width="4160" height="6240">
+      </div>
+      <div class="reveal aspect-[4/3] rounded-sm overflow-hidden border border-cream/8 bg-black flex items-center justify-center">
+        <img src="images/logo.jpg" alt="Logo Couddy — Live Music"
+             class="w-full h-full object-contain p-6" loading="lazy" width="1254" height="1254">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 sm:py-32 bg-plum-2">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8">
+    <div class="reveal rounded-sm p-8 sm:p-14" style="background:linear-gradient(135deg, #e8c876, #c9a24b);">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5">
+          <h2 class="font-serif font-semibold text-plum text-3xl sm:text-4xl mb-4">Demande de devis</h2>
+          <p class="text-plum/80 text-base sm:text-lg leading-relaxed mb-8">
+            Un mariage, une soirée, un bar à animer ? <br>
+            Contactez-nous, on vous répond vite.
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <p class="flex items-center gap-3 font-mono text-plum font-semibold">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg>
+              <span>Téléphone : <span class="font-normal italic opacity-70">06.15.87.05.82</span></span>
+            </p>
+            <p class="flex items-center gap-3 font-mono text-plum font-semibold">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+              <span>Email : <a href="mailto:couddy.musique@gmail.com" class="font-normal underline decoration-plum/30 hover:decoration-plum">couddy.musique@gmail.com</a></span>
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-5">
+            <a href="https://linkaband.com/couddy" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-plum font-semibold hover:opacity-70 transition-opacity">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007.5.5l3-3a5 5 0 00-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 00-7.5-.5l-3 3a5 5 0 007 7l1.7-1.7"/></svg>
+              Linkaband
+            </a>
+            <a href="https://www.instagram.com/_couddy_/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-plum font-semibold hover:opacity-70 transition-opacity">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form class="grid sm:grid-cols-2 gap-5" aria-label="Formulaire de demande de devis">
+            <div class="flex flex-col gap-1.5">
+              <label for="f-nom" class="text-plum text-sm font-semibold">Nom</label>
+              <input id="f-nom" name="nom" type="text" required autocomplete="name"
+                     class="min-h-[48px] px-4 py-2 bg-cream/90 focus:bg-white rounded-sm border-0 text-plum placeholder-plum/40">
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="f-email" class="text-plum text-sm font-semibold">Email</label>
+              <input id="f-email" name="email" type="email" required autocomplete="email"
+                     class="min-h-[48px] px-4 py-2 bg-cream/90 focus:bg-white rounded-sm border-0 text-plum placeholder-plum/40">
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="f-type" class="text-plum text-sm font-semibold">Type d'événement</label>
+              <select id="f-type" name="type_evenement"
+                      class="min-h-[48px] px-4 py-2 bg-cream/90 focus:bg-white rounded-sm border-0 text-plum">
+                <option>Mariage</option>
+                <option>Cocktail</option>
+                <option>Restaurant</option>
+                <option>Bar</option>
+                <option>Anniversaire</option>
+                <option>Entreprise</option>
+                <option>Club Med</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="f-date" class="text-plum text-sm font-semibold">Date souhaitée</label>
+              <input id="f-date" name="date" type="date"
+                     class="min-h-[48px] px-4 py-2 bg-cream/90 focus:bg-white rounded-sm border-0 text-plum">
+            </div>
+            <div class="sm:col-span-2 flex flex-col gap-1.5">
+              <label for="f-message" class="text-plum text-sm font-semibold">Message</label>
+              <textarea id="f-message" name="message" rows="4"
+                        class="px-4 py-3 bg-cream/90 focus:bg-white rounded-sm border-0 text-plum placeholder-plum/40"
+                        placeholder="Lieu, nombre d'invités, durée souhaitée, style musical…"></textarea>
+            </div>
+            <div class="sm:col-span-2">
+              <button type="submit" class="inline-flex items-center justify-center min-h-[52px] px-8 bg-plum text-cream font-semibold uppercase tracking-wide text-sm rounded-sm hover:bg-[#050505] transition-colors">
+                Envoyer la demande
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-cream/8 py-10 bg-plum-2">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 flex flex-wrap gap-4 items-center justify-between text-muted text-sm">
+    <p>© 2026 Couddy</p>
+    <nav class="flex gap-6" aria-label="Réseaux sociaux">
+      <a href="https://linkaband.com/couddy" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Linkaband</a>
+      <a href="https://www.instagram.com/_couddy_/" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Instagram</a>
+      <a href="https://www.youtube.com/@COUDDY_MUSIC" target="_blank" rel="noopener" class="hover:text-gold transition-colors">YouTube</a>
+    </nav>
+  </div>
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 mt-6 pt-6 border-t border-cream/8 flex flex-wrap gap-x-6 gap-y-2 text-muted text-xs font-mono uppercase tracking-widest">
+    <a href="mentions-legales.html" class="hover:text-gold transition-colors">Mentions légales</a>
+    <a href="politique-confidentialite.html" class="hover:text-gold transition-colors">Politique de confidentialité</a>
+    <a href="cgu.html" class="hover:text-gold transition-colors">CGU</a>
+  </div>
+</footer>
+
+<!-- TIRAGE DU SOIR — overlay déclenché par le clic sur le vinyle -->
+<div id="vinylOverlay" class="fixed inset-0 z-[90] hidden flex-col items-center justify-center gap-8 px-5">
+  <div id="vinylBackdrop" class="absolute inset-0 bg-black/0"></div>
+
+  <div id="vinylFlip" style="width:min(56vmin,380px);">
+    <div id="vinylFlipDisc" class="vinyl" style="width:100%;">
+      <span class="vinyl-label" aria-hidden="true">COUDDY</span>
+    </div>
+  </div>
+
+  <div id="vinylCard" role="dialog" aria-modal="true" aria-labelledby="vinylCardTitle"
+       class="relative z-10 max-w-md w-full bg-plum-2 border border-gold/30 rounded-sm p-7 sm:p-9 text-center opacity-0"
+       style="transition:opacity .35s ease, transform .35s ease; transform:scale(0.96);">
+    <p id="vinylCardTitle" class="font-mono text-gold text-xs uppercase tracking-[0.25em] mb-4">Ce soir, on vous joue peut-être…</p>
+    <p id="vinylSongTitle" class="font-serif font-semibold text-cream text-2xl sm:text-3xl mb-1" style="opacity:0; transition:opacity .5s ease;"></p>
+    <p id="vinylSongArtist" class="text-muted mb-8" style="opacity:0; transition:opacity .5s ease;"></p>
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a href="#repertoire" id="vinylRepertoireLink" class="inline-flex items-center justify-center min-h-[48px] px-6 bg-gold text-plum font-semibold uppercase tracking-wide text-sm rounded-sm hover:bg-gold-light transition-colors">
+        Voir tout le répertoire
+      </a>
+      <button type="button" id="vinylClose" class="inline-flex items-center justify-center min-h-[48px] px-6 border border-cream/25 text-cream font-medium uppercase tracking-wide text-sm rounded-sm hover:border-gold hover:text-gold transition-colors">
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

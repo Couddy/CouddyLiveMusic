@@ -1,0 +1,94 @@
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+}
+body{
+  background:#121110;
+  font-feature-settings:"liga" 1;
+}
+
+/* focus ring consistent across interactive elements */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+  outline:2px solid #e8c876;
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ---------- Vinyle signature ---------- */
+.vinyl{
+  width:min(360px, 78vw);
+  aspect-ratio:1/1;
+  border-radius:50%;
+  background:
+    repeating-radial-gradient(circle at center, #050505 0 2px, #100f0e 2px 6px);
+  position:relative;
+  box-shadow:0 40px 80px -20px rgba(0,0,0,0.65), 0 0 0 1px rgba(232,200,118,0.08);
+  animation:spin 16s linear infinite;
+}
+.vinyl::before{
+  content:"";
+  position:absolute;
+  inset:37%;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #e8c876, #c9a24b 60%, #8a6a28 100%);
+}
+.vinyl::after{
+  content:"";
+  position:absolute;
+  top:47%; left:47%;
+  width:6%; height:6%;
+  transform:translate(-50%,-50%);
+  background:#050505;
+  border-radius:50%;
+  z-index:2;
+}
+.vinyl-label{
+  position:absolute;
+  inset:37%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'JetBrains Mono', monospace;
+  font-size:0.62rem;
+  letter-spacing:0.18em;
+  color:#121110;
+  z-index:1;
+  pointer-events:none;
+}
+@keyframes spin{ from{ transform:rotate(0deg);} to{ transform:rotate(360deg);} }
+@media (prefers-reduced-motion: reduce){ .vinyl{ animation:none; } }
+
+/* ---------- Tirage du soir (overlay vinyle) ---------- */
+#vinylOverlay.open{ display:flex; }
+#vinylBackdrop{ transition:background-color .5s ease; }
+.vinyl-fast{ animation-duration:0.6s !important; }
+.vinyl-manual{ animation:none !important; }
+/* ombre recentrée (sans décalage) : la version par défaut de .vinyl est pensée
+   pour un badge en coin de photo, pas pour un disque flottant centré */
+#vinylFlipDisc{ box-shadow:0 0 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(232,200,118,0.12); }
+
+/* ---------- Marquee (bandeau défilant hero) ---------- */
+/* Défilement continu volontairement non soumis à prefers-reduced-motion :
+   translation linéaire de faible amplitude, sans risque vestibulaire. */
+.marquee-inner{ animation:marquee 26s linear infinite; }
+@keyframes marquee{ to{ transform:translateX(-16.6667%); } }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+/* ---------- Repertoire list ---------- */
+.repertoire-list{ scrollbar-width:thin; scrollbar-color:#9c7a30 #1b1917; }
+.repertoire-list::-webkit-scrollbar{ width:8px; }
+.repertoire-list::-webkit-scrollbar-track{ background:#1b1917; }
+.repertoire-list::-webkit-scrollbar-thumb{ background:#9c7a30; border-radius:4px; }
+
+/* ---------- Texture ---------- */
+.grain{
+  background-image:radial-gradient(rgba(243,234,217,0.035) 1px, transparent 1px);
+  background-size:3px 3px;
+}
+
+.mobile-menu{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+.mobile-menu.open{ max-height:24rem; }
