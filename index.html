@@ -428,7 +428,10 @@
         </div>
 
         <div class="lg:col-span-7">
-          <form class="grid sm:grid-cols-2 gap-5" aria-label="Formulaire de demande de devis">
+          <form id="quoteForm" class="grid sm:grid-cols-2 gap-5" aria-label="Formulaire de demande de devis">
+            <input type="hidden" name="access_key" value="42f523b8-880c-44e5-98ea-a980bb66436b">
+            <input type="hidden" name="subject" value="Nouvelle demande de devis — Couddy">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
             <div class="flex flex-col gap-1.5">
               <label for="f-nom" class="text-plum text-sm font-semibold">Nom</label>
               <input id="f-nom" name="nom" type="text" required autocomplete="name"
@@ -464,10 +467,11 @@
                         class="px-4 py-3 bg-cream/90 focus:bg-white rounded-sm border-0 text-plum placeholder-plum/40"
                         placeholder="Lieu, nombre d'invités, durée souhaitée, style musical…"></textarea>
             </div>
-            <div class="sm:col-span-2">
-              <button type="submit" class="inline-flex items-center justify-center min-h-[52px] px-8 bg-plum text-cream font-semibold uppercase tracking-wide text-sm rounded-sm hover:bg-[#050505] transition-colors">
+            <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+              <button type="submit" id="quoteFormSubmit" class="inline-flex items-center justify-center min-h-[52px] px-8 bg-plum text-cream font-semibold uppercase tracking-wide text-sm rounded-sm hover:bg-[#050505] transition-colors disabled:opacity-60">
                 Envoyer la demande
               </button>
+              <p id="quoteFormStatus" class="text-sm font-medium" role="status" aria-live="polite"></p>
             </div>
           </form>
         </div>
