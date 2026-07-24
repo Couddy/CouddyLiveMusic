@@ -344,10 +344,12 @@
     <div class="grid lg:grid-cols-12 gap-6 mb-6">
       <div class="lg:col-span-8">
         <div class="reveal border border-cream/8 bg-plum-2 rounded-sm overflow-hidden">
-          <video controls preload="metadata" class="w-full block max-h-[70vh] bg-black" poster="images/couddy-duo-restaurant-neon.jpg">
-            <source src="videos/promo-couddy.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture vidéo.
-          </video>
+          <div class="aspect-[9/16] w-full sm:w-fit sm:h-[70vh] sm:max-h-[70vh] mx-auto">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/diVqzb2JrBU"
+                    title="Vidéo promo Couddy" loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+          </div>
         </div>
       </div>
       <div class="lg:col-span-4">
